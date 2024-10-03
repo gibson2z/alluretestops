@@ -1,0 +1,71 @@
+name: mandatory-job-run-stop
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      TEST_ENDPOINT:
+        description: "Endpoint for tests"
+        required: true
+        default: https://dev.github.com
+      TEST_BROWSER:
+        description: "Browser for tests"
+        required: true
+        default: chrome
+      ALLURE_JOB_RUN_ID:
+        description: "ALLURE_JOB_RUN_ID service parameter. Leave blank."
+        required: false
+      ALLURE_USERNAME:
+        description: "ALLURE_USERNAME service parameter. Leave blank"
+        required: false
+
+env:
+  ALLURE_ENDPOINT: https://testing.testops.cloud
+  ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
+  ALLURE_PROJECT_ID: ${{ secrets.ALLURE_PROJECT_ID }}
+  ALLURE_RESULTS: build/allure-results
+  ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+
+jobs:
+  DownloadAllureCtl:
+    name: main
+    runs-on: ubuntu-latest
+    permissions: write-all
+    outputs:
+      allure-ci-env: ${{ steps.setup-allure-env.outputs.allure-ci-env }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: install and configure allurectl
+        uses: allure-framework/setup-allurectl@v1
+      - name: setup allure env
+        id: setup-allure-env
+        run: echo "allure-ci-env=$(bin/allurectl ci env --encode)" >> $GITHUB_OUTPUT
+      
+  all-tests-1:
+    name: job1
+    runs-on: ubuntu-latest
+    needs: [ DownloadAllureCtl ]
+    permissions: write-all
+    env:
+      ALLURE_CI_ENV: ${{needs.DownloadAllureCtl.outputs.allure-ci-env}}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: install java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+          cache: 'gradle'
+      - name: install and configure allurectl
+        uses: allure-framework/setup-allurectl@v1
+      - name: printenv before
+        run: printenv
+      - name: Build with Gradle
+        run: |
+          export $(allurectl job-run env)
+          printenv
+          allurectl watch -- ./gradlew clean test
+      - name: printenv after
+        run: printenv
