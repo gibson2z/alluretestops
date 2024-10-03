@@ -20,7 +20,7 @@ on:
         required: false
 
 env:
-  ALLURE_ENDPOINT: https://testing.testops.cloud
+  ALLURE_ENDPOINT: 192.168.0.107
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_PROJECT_ID: ${{ secrets.ALLURE_PROJECT_ID }}
   ALLURE_RESULTS: build/allure-results
