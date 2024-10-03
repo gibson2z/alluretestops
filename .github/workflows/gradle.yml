@@ -20,10 +20,10 @@ on:
         required: false
 
 env:
-  ALLURE_ENDPOINT: 192.168.0.107
+  ALLURE_ENDPOINT: https://testing.qatools.cloud/
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
-  ALLURE_PROJECT_ID: ${{ secrets.ALLURE_PROJECT_ID }}
-  ALLURE_RESULTS: build/allure-results
+  ALLURE_PROJECT_ID: 174
+  ALLURE_RESULTS: "allure-results"
   ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
 
 jobs:
