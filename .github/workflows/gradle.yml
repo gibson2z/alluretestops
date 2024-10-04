@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       TEST_ENDPOINT:
-        description: "Endpoint for testss"
+        description: "Endpoint for tests"
         required: true
         default: https://dev.github.com
       TEST_BROWSER:
