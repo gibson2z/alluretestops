@@ -20,7 +20,7 @@ on:
         required: false
 
 env:
-  ALLURE_ENDPOINT: http://188.243.156.169:22003/
+  ALLURE_ENDPOINT: https://testing.qatools.cloud/
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN_LOCAL }}
   ALLURE_PROJECT_ID: 1
   ALLURE_RESULTS: "build/allure-results"
