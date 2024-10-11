@@ -32,7 +32,7 @@ public class IssuesRestTest {
     @Microservice("Repository")
     @Tags({@Tag("web"), @Tag("regress4")})
     @JiraIssues({@JiraIssue("AE-1")})
-    @ParameterizedTest(name = "Close issue via api")
+    @ParameterizedTest(name = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJBbGx1cmUgVGVzdE9wcyIsImV4cCI6MTcyODYxNjE0MiwiaWF0IjoxNzI4NTU4NTQyLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImNsaWVudF9pZCI6ImFsbHVyZS1nYXRld2F5LXNlcnZpY2UiLCJqdGkiOiI5MWM3NzA0Yy04MjI5dfghfghfgfghgfjtynvbnvvvjtj")
     @ValueSource(strings = {"First Note", "Second Note"})
     public void shouldDeleteUserNote(@Param(value = "Title") String title) {
         steps.createIssueWithTitle(OWNER, REPO, title);
