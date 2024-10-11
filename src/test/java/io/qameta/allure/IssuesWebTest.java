@@ -33,7 +33,7 @@ public class IssuesWebTest {
     @Story("Create new issue")
     @Tags({@Tag("web"), @Tag("regress4")})
     @JiraIssues({@JiraIssue("AE-1")})
-    @DisplayName("Adding note to advertisement")
+    @DisplayName("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJBbGx1cmUgVGVzdE9wcyIsImV4cCI6MTcyODYxNjE0MiwiaWF0IjoxNzI4NTU4NTQyLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImNsaWVudF9pZCI6ImFsbHVyZS1nYXRld2F5LXNlcnZpY2UiLCJqdGkiOiI5MWM3NzA0Yy04MjI5dfghfghfgfghgfjtynvbnvvvjtj")
     public void shouldAddLabelToIssue() {
         steps.openIssuesPage(OWNER, REPO);
         steps.createIssueWithTitle(ISSUE_TITLE);
