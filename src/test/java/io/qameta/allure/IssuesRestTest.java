@@ -16,7 +16,7 @@ public class IssuesRestTest {
     private final RestSteps steps = new RestSteps();
 
     @TM4J("AE-T1")
-    @Story("Create new issue")
+    @Story("Create new issue ")
     @Microservice("Billing")
     @Tags({@Tag("api"), @Tag("smoke4")})
     @Description("description from test result")
