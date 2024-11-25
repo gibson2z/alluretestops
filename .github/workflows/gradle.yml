@@ -20,7 +20,7 @@ on:
         required: false
 
 env:
-  ALLURE_ENDPOINT: https://188.243.156.169:22003/
+  ALLURE_ENDPOINT: http://188.243.156.169:22003/
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_PROJECT_ID: 1
   ALLURE_RESULTS: "build/allure-results"
