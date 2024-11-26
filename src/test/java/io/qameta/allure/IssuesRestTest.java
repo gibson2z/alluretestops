@@ -28,7 +28,7 @@ public class IssuesRestTest {
     }
 
     @TM4J("AE-T2")
-    @Story("Close existing issue")
+    @Story("Close existing  issue")
     @Microservice("Repository")
     @Tags({@Tag("web"), @Tag("regress4")})
     @JiraIssues({@JiraIssue("AE-1")})
