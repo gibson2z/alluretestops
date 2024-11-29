@@ -43,7 +43,7 @@ steps:
     echo "All variables"
     printenv
 
-  displayName: 'running pytest  tests'
+  displayName: 'running pytest tests'
   env:
     ALLURE_ENDPOINT: http://188.243.156.169:22003/
     ALLURE_PROJECT_ID: 1
