@@ -1,5 +1,6 @@
 name: mandatory-job-run-stop
-on:
+ 
+ on:
   push:
   workflow_dispatch:
     inputs:
