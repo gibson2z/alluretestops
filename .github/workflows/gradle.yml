@@ -9,7 +9,7 @@ on:
         required: true
         default: https://dev.github.com
       TEST_BROWSER:
-        description: "Browser for tests"
+        description: "Browser for  tests"
         required: true
         default: chrome
       ALLURE_JOB_RUN_ID:
