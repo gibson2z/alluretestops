@@ -23,7 +23,7 @@ env:
   ALLURE_ENDPOINT: http://188.243.156.169:22003/
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_PROJECT_ID: 3
-  ALLURE_RESULTS: ./allure-results
+  ALLURE_RESULTS: ./alluretestops/allure-results
   ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
 
 jobs:
