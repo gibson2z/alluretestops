@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 @Layer("rest")
 @Owner("baev")
 @Feature("Issues")
-public class IssuesRestTest {
+public class TestWithSteps {
 
     private static final String OWNER = "allure-framework, not-allure-framework";
     private static final String REPO = "allure2";
