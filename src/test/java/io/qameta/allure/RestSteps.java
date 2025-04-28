@@ -1,5 +1,3 @@
-package io.qameta.allure;
-
 public class RestSteps {
 
     public void createIssueWithTitle(String owner, String repo, String title) {
