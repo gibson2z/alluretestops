@@ -113,3 +113,14 @@ public class TestWithSteps {
         steps.closeIssueWithTitle(OWNER, REPO, longTitle);
     }
 }
+
+    @ParameterizedTest(name = "Here is the user with parameter {0}")
+    @ValueSource(strings = {"First Note", "Second Note"})
+    public void shouldCreateUserNote2(String title) {
+        parameter("owner", OWNER);
+        parameter("repo", REPO);
+        parameter("title", title);
+
+        assertNotEquals("aaa", title);
+    }
+}
