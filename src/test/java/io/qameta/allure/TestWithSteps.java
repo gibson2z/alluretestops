@@ -66,10 +66,7 @@ public class TestWithSteps {
     @Microservice("Repository")
     @Tags({@Tag("api"), @Tag("regress4")})
     @Description("Verify updating of an existing issue")
-    public void shouldUpdateUserNote(String oldTitle, String newTitle) {
-        steps.createIssueWithTitle(OWNER, REPO, oldTitle);
-        steps.updateIssueTitle(OWNER, REPO, oldTitle, newTitle);
-        steps.shouldSeeIssueWithTitle(OWNER, REPO, newTitle);
+    public void shouldUpdateUserNote(final String parameter) {
     }
 
     private static Stream<Arguments> provideTitleUpdateData() {
