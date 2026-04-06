@@ -57,16 +57,18 @@ public class TestWithSteps {
     }
 
 
-    @ParameterizedTest
-    @ValueSource(strings = {"First Note", "Second Note"})
-    @MethodSource("provideTitleUpdateData")
     @TM4J("AE-T4")
     @DisplayName("Update issue using two parameters")
     @Story("Update existing issue")
     @Microservice("Repository")
     @Tags({@Tag("api"), @Tag("regress4")})
     @Description("Verify updating of an existing issue")
-    public void shouldUpdateUserNote(final String parameter) {
+    @ParameterizedTest
+    @MethodSource("provideTitleUpdateData")
+    public void shouldUpdateUserNote(@Param(value = "Old Title") String oldTitle, @Param(value = "New Title") String newTitle) {
+        steps.createIssueWithTitle(OWNER, REPO, oldTitle);
+        steps.updateIssueTitle(OWNER, REPO, oldTitle, newTitle);
+        steps.shouldSeeIssueWithTitle(OWNER, REPO, newTitle);
     }
 
     private static Stream<Arguments> provideTitleUpdateData() {
