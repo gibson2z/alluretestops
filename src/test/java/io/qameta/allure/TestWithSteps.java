@@ -57,7 +57,7 @@ public class TestWithSteps {
     }
 
 
-    @ParameterizedTest(name = " — {0}")
+    @ParameterizedTest
     @ValueSource(strings = {"First Note", "Second Note"})
     @MethodSource("provideTitleUpdateData")
     @TM4J("AE-T4")
