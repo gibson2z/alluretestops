@@ -114,7 +114,7 @@ public class TestWithSteps {
     }
 }
 
-    @ParameterizedTest(name = "Here is the user with parameter {0}")
+    @ParameterizedTest(name = "Here is the user  with parameter {0}")
     @ValueSource(strings = {"First Note", "Second Note"})
     public void shouldCreateUserNote2(String title) {
         parameter("owner", OWNER);
