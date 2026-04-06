@@ -57,7 +57,8 @@ public class TestWithSteps {
     }
 
 
-    @ParameterizedTest(name = "Update issue from {0} to {1}")
+    @ParameterizedTest(name = " — {0}")
+    @ValueSource(strings = {"First Note", "Second Note"})
     @MethodSource("provideTitleUpdateData")
     @TM4J("AE-T4")
     @DisplayName("Update issue using two parameters")
