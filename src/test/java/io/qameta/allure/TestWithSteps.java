@@ -57,6 +57,7 @@ public class TestWithSteps {
     }
 
 
+    @ExtendWith(TestNameExtension.class)
     @TM4J("AE-T4")
     @DisplayName("Update issue using two parameters")
     @Story("Update existing issue")
