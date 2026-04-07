@@ -57,7 +57,7 @@ public class TestWithSteps {
     }
 
     @TM4J("AE-T4")
-    @DisplayName("Update issue using two parameters")
+    @DisplayName(name = "Update issue")
     @Story("Update existing issue")
     @Microservice("Repository")
     @Tags({@Tag("api"), @Tag("regress4")})
