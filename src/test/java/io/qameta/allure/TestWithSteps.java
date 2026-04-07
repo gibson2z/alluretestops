@@ -63,7 +63,7 @@ public class TestWithSteps {
     @Microservice("Repository")
     @Tags({@Tag("api"), @Tag("regress4")})
     @Description("Verify updating of an existing issue")
-    @ParameterizedTest
+    @ParameterizedTest(name = "{DisplayName}")
     @MethodSource("provideTitleUpdateData")
     public void shouldUpdateUserNote(@Param(value = "Old Title") String oldTitle, @Param(value = "New Title") String newTitle) {
         steps.createIssueWithTitle(OWNER, REPO, oldTitle);
@@ -83,7 +83,6 @@ public class TestWithSteps {
     @Microservice("Billing")
     @Tags({@Tag("api"), @Tag("regress4")})
     @Description("Verify that all issues can be listed")
-    @ParameterizedTest
     public void shouldListAllUserNotes() {
         steps.createIssueWithTitle(OWNER, REPO, "First Note");
         steps.createIssueWithTitle(OWNER, REPO, "Second Note");
