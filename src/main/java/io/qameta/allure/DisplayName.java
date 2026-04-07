@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-@LabelAnnotation(name = "displayname")
+@LabelAnnotation(name = "displayName")
 public @interface DisplayName {
 
     String value();
