@@ -70,15 +70,20 @@ public class TestWithSteps {
         steps.updateIssueTitle(OWNER, REPO, oldTitle, newTitle);
         steps.shouldSeeIssueWithTitle(OWNER, REPO, newTitle);
     }
-
+    private static Stream<Arguments> provideTitleUpdateData() {
+        return Stream.of(
+            Arguments.of("First Note", "Updated First Note"),
+            Arguments.of("Second Note", "Updated Second Note")
+        );
     }
 
     @TM4J("AE-T5")
+    @DisplayName("List all issues")
     @Story("List all issues")
     @Microservice("Billing")
     @Tags({@Tag("api"), @Tag("regress4")})
     @Description("Verify that all issues can be listed")
-    @ParameterizedTest(name = "List all issues")
+    @ParameterizedTest
     public void shouldListAllUserNotes() {
         steps.createIssueWithTitle(OWNER, REPO, "First Note");
         steps.createIssueWithTitle(OWNER, REPO, "Second Note");
