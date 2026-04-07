@@ -71,11 +71,6 @@ public class TestWithSteps {
         steps.shouldSeeIssueWithTitle(OWNER, REPO, newTitle);
     }
 
-    private static Stream<Arguments> provideTitleUpdateData() {
-        return Stream.of(
-            Arguments.of("First Note", "Updated First Note"),
-            Arguments.of("Second Note", "Updated Second Note")
-        );
     }
 
     @TM4J("AE-T5")
