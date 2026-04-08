@@ -34,11 +34,12 @@ public class TestWithSteps {
     }
 
     @TM4J("AE-T2")
+    @DisplayName("Close issue via api")
     @Story("Close existing issue")
     @Microservice("Repository")
     @Tags({@Tag("web"), @Tag("regress4")})
     @JiraIssues({@JiraIssue("AE-1")})
-    @ParameterizedTest(name = "Close issue via api")
+    @ParameterizedTest
     @ValueSource(strings = {"First Note", "Second Note"})
     public void shouldDeleteUserNote(@Param(value = "Title") String title) {
         steps.createIssueWithTitle(OWNER, REPO, title);
