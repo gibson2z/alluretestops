@@ -13,7 +13,8 @@ import java.util.stream.Stream;
 @Layer("rest")
 @Owner("baev")
 @Feature("Issues")
-
+@ExtendWith(TestNameExtension.class)
+    
 public class TestWithSteps {
 
     private static final String OWNER = "allure-framework, not-allure-framework";
