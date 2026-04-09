@@ -64,7 +64,7 @@ public class TestWithSteps {
     @Story("Update existing issue")
     @Microservice("Repository")
     @Tags({@Tag("api"), @Tag("regress4")})
-    @Description("Verify updating of an existing issue")
+    @Description("Verify updating of an existing issue using two parameters")
     @ParameterizedTest(name = "Update issue")
     @MethodSource("provideTitleUpdateData")
     public void shouldUpdateUserNote(@Param(value = "Old Title") String oldTitle, @Param(value = "New Title") String newTitle) {
