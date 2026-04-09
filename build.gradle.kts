@@ -51,5 +51,5 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter-engine:5.10.0") // Update from 5.7.2
     implementation("org.junit.jupiter:junit-jupiter-params:5.10.0") // Update from 5.7.2
     implementation("io.qameta.allure:allure-selenide:2.27.0")       // Update from 2.16.1
-    implementation("com.codeborne:selenide:6.19.3")                 // Update from 6.0.3
+    implementation("com.codeborne:selenide:6.12.3")                 // Update from 6.0.3
 }
