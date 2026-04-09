@@ -65,7 +65,7 @@ public class TestWithSteps {
     @Microservice("Repository")
     @Tags({@Tag("api"), @Tag("regress4")})
     @Description("Verify updating of an existing issue")
-    @ParameterizedTest(name = "Update issue using")
+    @ParameterizedTest(name = "Update issue")
     @MethodSource("provideTitleUpdateData")
     public void shouldUpdateUserNote(@Param(value = "Old Title") String oldTitle, @Param(value = "New Title") String newTitle) {
         steps.createIssueWithTitle(OWNER, REPO, oldTitle);
