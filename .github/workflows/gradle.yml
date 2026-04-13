@@ -71,3 +71,8 @@ jobs:
         run: printenv
       - name: Upload artifact
         uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: ${{ env.ALLURE_RESULTS }}
+          if-no-files-found: warn
+          retention-days: 30
