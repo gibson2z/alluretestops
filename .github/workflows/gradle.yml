@@ -20,9 +20,9 @@ on:
         required: false
 
 env:
-  ALLURE_ENDPOINT: https://testing.qatools.cloud/
+  ALLURE_ENDPOINT: http://188.243.156.169:22003/
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
-  ALLURE_PROJECT_ID: 2195
+  ALLURE_PROJECT_ID: 15
   ALLURE_RESULTS: "build/allure-results"
   ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
 
@@ -69,3 +69,10 @@ jobs:
           allurectl watch -- ./gradlew clean test
       - name: printenv after
         run: printenv
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: ${{ env.ALLURE_RESULTS }}
+          if-no-files-found: warn
+          retention-days: 30
