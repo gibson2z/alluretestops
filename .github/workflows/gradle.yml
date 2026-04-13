@@ -69,3 +69,5 @@ jobs:
           allurectl watch -- ./gradlew clean test
       - name: printenv after
         run: printenv
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
