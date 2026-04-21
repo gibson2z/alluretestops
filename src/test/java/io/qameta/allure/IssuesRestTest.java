@@ -30,7 +30,7 @@ public class IssuesRestTest {
     @TM4J("AE-T2")
     @Story("Close existing  issue")
     @Microservice("Repository")
-    @Tags({@Tag("web"), @Tag("regress4")})
+    @Tags({@Tag("api"), @Tag("regress4")})
     @JiraIssues({@JiraIssue("AE-1")})
     @ParameterizedTest(name = "Close issue via api")
     @ValueSource(strings = {"First Note", "Second Note"})
