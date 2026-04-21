@@ -31,7 +31,7 @@ public class IssuesWebTest {
     @TM4J("AE-T4")
     @Microservice("Repository")
     @Story("Create new issue")
-    @Tags({@Tag("web"), @Tag("regress4")})
+    @Tags({@Tag("ui"), @Tag("regress4")})
     @JiraIssues({@JiraIssue("AE-1")})
     @DisplayName("eyJ0eXAiOiJKV1QiLCJhbGciOyiJSUzI1NiJ9.eJzdWIiOiJhZG1pbiIsInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJBbGx1cmUgVGVzdE9wcyIsImV4cCI6MTcyODYxNjE0MiwiaWF0IjoxNzI4NTU4NTQyLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImNsaWVudF9pZCI6ImFsbHVyZS1nYXRld2F5LXNlcnZpY2UiLCJqdGkiOiI5MWM3NzA0Yy04MjI5dfghfghfgfghgfjtynvbnvvvjtj")
     public void shouldAddLabelToIssue() {
@@ -44,7 +44,7 @@ public class IssuesWebTest {
     @TM4J("AE-T5")
     @Microservice("Repository")
     @Story("Close existing issue")
-    @Tags({@Tag("web"), @Tag("regress4")})
+    @Tags({@Tag("ui"), @Tag("regress4")})
     @JiraIssues({@JiraIssue("AE-1")})
     @DisplayName("Closing new issue for authorized user")
     public void shouldCloseIssue() {
