@@ -15,10 +15,6 @@ schedules:
     include:
     - master
 
-
-pool:
-  vmImage: ubuntu-latest
-
 steps:
 - task: Bash@3
   displayName: 'Install pytest'
