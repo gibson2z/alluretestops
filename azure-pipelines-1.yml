@@ -50,3 +50,8 @@ steps:
     ALLURE_LAUNCH_TAGS: "$(Build.SourceBranchName), azure"
     AZURE_BROWSER: $(AZURE_BROWSER)
     AZURE_HOST: $(AZURE_HOST)
+
+- publish: $(System.DefaultWorkingDirectory)/build/allure-results
+  artifact: allure-results
+  displayName: Publish Allure results
+  condition: succeededOrFailed()
